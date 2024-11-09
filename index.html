@@ -1,84 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <!-- Primary Meta Tags -->
-	<title>Cornutron 3000</title>
-	<meta name="title" content="Cornutron 3000" />
-	<meta name="description" content="Tene tus propios tweets de cornudismo!!!!" />
+  <!-- Primary Meta Tags -->
+  <title>Cornutron 3000</title>
+  <meta name="title" content="Cornutron 3000" />
+  <meta name="description" content="Tene tus propios tweets de cornudismo!!!!" />
 
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://maximoospital.xyz/cornutron3000" />
-	<meta property="og:title" content="Cornutron 3000" />
-	<meta property="og:description" content="Tene tus propios tweets de cornudismo!!!!" />
-	<meta property="og:image" content="meta.png" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://maximoospital.xyz/cornutron3000" />
+  <meta property="og:title" content="Cornutron 3000" />
+  <meta property="og:description" content="Tene tus propios tweets de cornudismo!!!!" />
+  <meta property="og:image" content="/img/meta.png" />
 
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://maximoospital.xyz/cornutron3000/" />
-	<meta property="twitter:title" content="Cornutron 3000" />
-	<meta property="twitter:description" content="Tene tus propios tweets de cornudismo!!!!" />
-	<meta property="twitter:image" content="meta.png" />
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://maximoospital.xyz/cornutron3000/" />
+  <meta property="twitter:title" content="Cornutron 3000" />
+  <meta property="twitter:description" content="Tene tus propios tweets de cornudismo!!!!" />
+  <meta property="twitter:image" content="/img/meta.png" />
 
-  <link href="tailwind.min.css" rel="stylesheet">
-  <script src="frases.js"></script>
-    <style>
+  <link href="/css/tailwind.min.css" rel="stylesheet">
+  <script src="/js/cornudaTuits.js"></script>
+  <script src="/js/main.js"></script>
+  <style>
     .fade-in {
       transition: opacity 1s ease-in-out;
     }
-	.bg-black {
-		background-color: black;
-	}
-	.hidden {
-		display: none;
-	}
 
+    .bg-black {
+      background-color: black;
+    }
+
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
+
 <body class="bg-black text-white font-sans flex items-center justify-center h-screen">
   <div class="max-w-md p-4 bg-black hidden opacity-0 fade-in" id="tweet_container">
     <!-- Header with Profile Picture and Username -->
     <div class="flex items-center mb-2">
-      <img src="pfp.jpg" alt="Profile Picture" class="rounded-full h-10 w-10 mr-2">
+      <img id="profile-picture" src="/img/pfp/pfp_1.jpg" alt="Profile Picture" class="rounded-full h-10 w-10 mr-2">
       <div class="flex flex-col">
         <span class="font-bold text-white">cornutron</span>
         <span class="text-gray-500">@cornutron3000</span>
       </div>
-      <button class="ml-auto text-sm font-semibold text-white bg-gray-700 px-3 py-1 rounded-lg" onclick="generate()">Cornudear</button>
+      <button class="ml-auto text-sm font-semibold text-white bg-gray-700 px-3 py-1 rounded-lg"
+        onclick="generate()">Cornudear</button>
     </div>
 
     <!-- Tweet Content -->
-    <p class="text-lg mb-2" id="tuit_texto">tene tu propio tweet de cornuda ya mismo! apreta en "cornudear", tuitea, genera likes.</p>
+    <p class="text-lg mb-2" id="tuit_texto">tene tu propio tweet de cornuda ya mismo! apreta en "cornudear", tuitea,
+      genera likes.</p>
     <img class="rounded-xl mt-2 mb-2 hidden opacity-0 fade-in" id="imagen" src="" />
     <!-- Timestamp and Stats -->
     <div class="text-gray-500 text-sm mb-2">
       <span><span id="hora">13:23</span> · <span id="fecha">07 nov 24</span> · </span>
-      <span id="views">64,8K Visualizaciones</span>
+      <span><span id="views" class="font-semibold text-white">64,8K</span> Visualizaciones</span>
     </div>
 
     <!-- Reactions -->
-    <div class="flex justify-between text-sm text-gray-500 border-t border-gray-600 pt-2">
+    <div class=" flex justify-between text-sm text-gray-500 border-t border-gray-600 pt-2">
       <div class="flex items-center">
         <span class="mr-1 font-semibold text-white" id="likes">36k</span>
         <span>Me gusta</span>
       </div>
       <div class="flex items-center">
-        <button class="ml-auto text-sm font-semibold text-white bg-blue-500 px-3 py-1 rounded-lg" onclick="tweet()">Tuitear</button>
+        <button class="ml-auto text-sm font-semibold text-white bg-blue-500 px-3 py-1 rounded-lg"
+          onclick="tweet()">Tuitear</button>
       </div>
     </div>
-	
-	<div class="flex justify-between text-sm text-gray-500 border-t border-gray-600 mt-2 pt-2">
+
+    <div class="flex justify-between text-sm text-gray-500 border-t border-gray-600 mt-2 pt-2">
       <div class="flex items-center">
         <span class="mr-1">Un juguete de</span>
         <a class="font-semibold text-white" href="https://maximoospital.xyz" target="_blank">Maximo Ospital</a>
       </div>
     </div>
   </div>
-    <script>
+  <script>
     // Wait for the entire page to load
-	window.addEventListener('load', () => {
+    window.addEventListener('load', () => {
       // Get the tweet container div
       const tweetContainer = document.getElementById('tweet_container');
       // Remove 'hidden' and apply opacity-0 and fade-in effect
@@ -90,4 +97,5 @@
 
   </script>
 </body>
+
 </html>
