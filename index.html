@@ -94,17 +94,74 @@
     </div>
   </div>
   <script>
-    // Wait for the entire page to load
-    window.addEventListener('load', () => {
-      // Get the tweet container div
-      const tweetContainer = document.getElementById('tweet_container');
-      // Remove 'hidden' and apply opacity-0 and fade-in effect
-      tweetContainer.classList.remove('hidden');
-      setTimeout(() => {
-        tweetContainer.classList.replace('opacity-0', 'opacity-100');
-      }, 10); // slight delay to allow the transition to work
+  document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const tweetContainer = document.getElementById('tweet_container');
+    const profilePicture = document.getElementById('profile-picture');
+    const userElement = document.getElementById('user');
+    const arrobaElement = document.getElementById('arroba');
+    const tuitTextoElement = document.getElementById('tuit_texto');
+    const imagenElement = document.getElementById('imagen');
+    const elementsToToggle = [
+      body,
+      tweetContainer,
+      userElement,
+      tuitTextoElement,
+      document.getElementById('views'),
+      document.getElementById('likes'),
+      document.getElementById('nombre'),
+      document.getElementById('nombre2'),
+    ];
+
+    // Fade-in effect
+    tweetContainer.classList.remove('hidden');
+    setTimeout(() => {
+      tweetContainer.classList.replace('opacity-0', 'opacity-100');
+    }, 10);
+
+    // Event listeners for profile picture
+    profilePicture.addEventListener('click', toggleMode);
+    profilePicture.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') toggleMode();
     });
 
+    let modo = false;
+
+    const modeData = {
+      true: {
+        textColor: 'text-white',
+        bgColor: 'bg-black',
+        user: 'futboltron',
+        arroba: '@futboltron3000',
+        tuitTexto: '¡Tené tu propio tweet de futbolero ya mismo! Apreta en "Cuckear", tuitea, genera likes.',
+      },
+      false: {
+        textColor: 'text-black',
+        bgColor: 'bg-white',
+        user: 'cornutron',
+        arroba: '@cornutron3000',
+        tuitTexto: '¡Tené tu propio tweet de cornudismo puro!!! Apreta en "Cornudear", tuitea, genera likes.',
+      },
+    };
+
+    function toggleMode() {
+      modo = !modo;
+      const currentMode = modeData[modo];
+
+      elementsToToggle.forEach((el) => {
+        el.classList.remove('text-white', 'text-black', 'bg-white', 'bg-black');
+        el.classList.add(currentMode.textColor);
+      });
+
+      body.classList.add(currentMode.bgColor);
+      tweetContainer.classList.add(currentMode.bgColor);
+      imagenElement.classList.add('hidden');
+
+      userElement.textContent = currentMode.user;
+      arrobaElement.textContent = currentMode.arroba;
+      tuitTextoElement.textContent = currentMode.tuitTexto;
+    }
+  });
   </script>
 </body>
 
