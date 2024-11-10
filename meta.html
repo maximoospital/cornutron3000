@@ -19,9 +19,9 @@
 		const urlParams = new URLSearchParams(window.location.search);
 		const photoNumber = urlParams.get("photo") || 1;
 		const imageUrl = `http://maximoospital.xyz/cornutron3000/img/imagen_${photoNumber}.jpeg`;
-
+		alert(imageUrl);
 		document.addEventListener("DOMContentLoaded", () => {
-			alert(imageUrl);
+			
 			document.querySelector("meta[property='og:image']").setAttribute("content", imageUrl);
 			document.querySelector("meta[property='twitter:image']").setAttribute("content", imageUrl);
 		});
