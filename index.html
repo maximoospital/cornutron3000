@@ -108,8 +108,19 @@
     function toggleMode() {
       document.getElementById("tweet_container").classList.toggle("bg-black");
       document.getElementById("tweet_container").classList.toggle("bg-white");
-      document.getElementsByName(body).classList.toggle("bg-white");
-      document.getElementsByName(body).classList.toggle("bg-black");
+      document.body.classList.toggle("bg-black");
+      document.body.classList.toggle("bg-white");
+      document.getElementById("tuit_texto").classList.toggle("text-black");
+      document.getElementById("tuit_texto").classList.toggle("text-white");
+      document.getElementById("hora").classList.toggle("text-black");
+      document.getElementById("hora").classList.toggle("text-white");
+      document.getElementById("fecha").classList.toggle("text-black");
+      document.getElementById("fecha").classList.toggle("text-white");
+      document.getElementById("views").classList.toggle("text-black");
+      document.getElementById("views").classList.toggle("text-white");
+      document.getElementById("likes").classList.toggle("text-black");
+      document.getElementById("likes").classList.toggle("text-white");
+      
     }
   </script>
 </body>
