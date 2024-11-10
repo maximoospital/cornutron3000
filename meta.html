@@ -20,6 +20,7 @@
 		const photoNumber = urlParams.get("photo") || 1;
 		const imageUrl = `http://maximoospital.xyz/cornutron3000/img/imagen_${photoNumber}.jpeg`;
 		alert(imageUrl);
+		console.log(imageUrl);
 		document.addEventListener("DOMContentLoaded", () => {
 			
 			document.querySelector("meta[property='og:image']").setAttribute("content", imageUrl);
