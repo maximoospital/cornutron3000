@@ -35,7 +35,7 @@ function generate() {
 		const indice_foto = Math.floor(Math.random() * (28 - 1) + 1);
 		var urlnew = tuit_url + "meta" + `.html?photo=${indice_foto}`;
 
-		document.getElementById("imagen").setAttribute('src', "/img/imagen_" + indice_foto + ".jpeg");
+		document.getElementById("imagen").setAttribute('src', "/cornutron3000/img/imagen_" + indice_foto + ".jpeg");
 		document.getElementById("imagen").classList.remove('hidden');
 		document.getElementById("imagen").onload = () => {
 			setTimeout(() => {
@@ -48,7 +48,7 @@ function generate() {
 	// Foto de perfil aleatoria
 	const randomNum = Math.floor(Math.random() * 10) + 1;
 
-	const randomImagePath = `/img/pfp/pfp_${randomNum}.jpg`;
+	const randomImagePath = `/cornutron3000/img/pfp/pfp_${randomNum}.jpg`;
 	document.getElementById("profile-picture").src = randomImagePath;
 
 	return tuit_select;
