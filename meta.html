@@ -22,8 +22,12 @@
 		console.log(imageUrl);
 		document.addEventListener("DOMContentLoaded", () => {
 			
-			document.querySelector("meta[property='og:image']").setAttribute("content", imageUrl);
-			document.querySelector("meta[property='twitter:image']").setAttribute("content", imageUrl);
+			const ogImageMeta = document.querySelector("meta[property='og:image']");
+			const twitterImageMeta = document.querySelector("meta[property='twitter:image']");
+			
+			// Check if the meta tags exist before setting attributes
+			if (ogImageMeta) ogImageMeta.setAttribute("content", imageUrl);
+			if (twitterImageMeta) twitterImageMeta.setAttribute("content", imageUrl);
 		});
 
 	</script>
