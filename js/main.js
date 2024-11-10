@@ -33,7 +33,7 @@ function generate() {
 	// Elije una foto
 	if (Math.random() < 0.5) {
 		const indice_foto = Math.floor(Math.random() * (28 - 1) + 1);
-		var urlnew = tuit_url + "meta" + `.html?photo=${indice_foto}`;
+		var urlnew = tuit_url + `meta.html?photo=${indice_foto}`;
 
 		document.getElementById("imagen").setAttribute('src', "/cornutron3000/img/imagen_" + indice_foto + ".jpeg");
 		document.getElementById("imagen").classList.remove('hidden');
