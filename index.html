@@ -149,7 +149,7 @@
       const currentMode = modeData[modo];
 
       elementsToToggle.forEach((el) => {
-        el.classList.remove('text-white', 'text-black', 'bg-white', 'bg-black');
+        el.classList.toggle('text-white', 'text-black', 'bg-white', 'bg-black');
         el.classList.add(currentMode.textColor);
       });
 
