@@ -11,23 +11,25 @@ function toggleMode() {
 	  {
 		nombre: "cornutron",
 		usuario: "@cornutron3000",
-		prefix: "img/cornuda/",
+		prefix: "cornuda",
 		default_texto: "tene tu propio tweet de cornuda ya mismo! apreta en \"Cornudear\", tuitea, genera likes.",
+		tweets: cornudaTuits,
 		tema: 'Dark',
 		boton: "Cornudear"
 	  },
 	  {
 		nombre: "futboltron",
 		usuario: "@futboltron2011",
-		prefix: "img/futbol/",
+		prefix: "futbol",
 		default_texto: "tene tu propio tweet de futbolero ya mismo! apreta en \"Cuckear\", tuitea, genera likes.",
+		tweets: futbolTweets,
 		tema: 'Dim',
 		boton: "Cuckear"
 	  },
 	  {
 		nombre: "hombretrolatron",
 		usuario: "@hombretrolatron1989",
-		prefix: "img/htrola/",
+		prefix: "htrola",
 		default_texto: "tene tu propio tweet de cornuda ya mismo! apreta en \"Llorar Concha\", tuitea, genera likes.",
 		tema: 'Light',
 		boton: "Llorar Concha"
@@ -38,7 +40,7 @@ function toggleMode() {
 	document.getElementById("generar").innerText = modos[modo].boton;
 	document.getElementById("tuit_texto").innerText = modos[modo].default_texto;
 	document.getElementById("imagen").classList.add('hidden');
-	document.getElementById("profile-picture").setAttribute('src', '/cornutron3000/' + modos[modo].prefix + "pfp/pfp_1.jpg");
+	document.getElementById("profile-picture").setAttribute('src', '/cornutron3000/img/' + modos[modo].prefix + "/pfp/pfp_1.jpg");
   }
 
 function generate() {
@@ -71,27 +73,29 @@ function generate() {
 
 	// Elije una frase
 	const indice = Math.floor(Math.random() * cornudaTuits.length);
-	tuit_select = cornudaTuits[indice];
+	tuit_select = modos[modo].tweets[indice];
 
 	// Elije una foto
-	if (Math.random() < 0.5) {
-		const indice_foto = Math.floor(Math.random() * (28 - 1) + 1);
-		var urlnew = tuit_url + `tw/${indice_foto}.html`;
+	if (modo == 0) {
+		if (Math.random() < 0.5) {
+			const indice_foto = Math.floor(Math.random() * (28 - 1) + 1);
+			var urlnew = tuit_url + `tw/${indice_foto}.html`;
 
-		document.getElementById("imagen").setAttribute('src', "/cornutron3000/img/imagen_" + indice_foto + ".jpeg");
-		document.getElementById("imagen").classList.remove('hidden');
-		document.getElementById("imagen").onload = () => {
-			setTimeout(() => {
-				document.getElementById("imagen").classList.replace('opacity-0', 'opacity-100');
-			}, 10);
+			document.getElementById("imagen").setAttribute('src', "/cornutron3000/" + modos[modo].prefix + "/img/imagen_" + indice_foto + ".jpeg");
+			document.getElementById("imagen").classList.remove('hidden');
+			document.getElementById("imagen").onload = () => {
+				setTimeout(() => {
+					document.getElementById("imagen").classList.replace('opacity-0', 'opacity-100');
+				}, 10);
+			}
+			console.log(urlnew)
+			tuit_url = urlnew;
 		}
-		console.log(urlnew)
-		tuit_url = urlnew;
 	}
 	// Foto de perfil aleatoria
 	const randomNum = Math.floor(Math.random() * 10) + 1;
 
-	const randomImagePath = `/cornutron3000/img/pfp/pfp_${randomNum}.jpg`;
+	const randomImagePath = `/cornutron3000/img//${modos[modo].prefix}/pfp/pfp_${randomNum}.jpg`;
 	document.getElementById("profile-picture").src = randomImagePath;
 }
 
