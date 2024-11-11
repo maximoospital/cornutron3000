@@ -50,7 +50,7 @@
   <div class="max-w-md p-4 bg-black hidden opacity-0 fade-in" id="tweet_container">
     <!-- Header with Profile Picture and Username -->
     <div class="flex items-center mb-2">
-      <img id="profile-picture" src="/cornutron3000//img/pfp/pfp_1.jpg" alt="Profile Picture"
+      <img id="profile-picture" src="/cornutron3000//img/cornuda/pfp/pfp_1.jpg" alt="Profile Picture"
         class="rounded-full h-10 w-10 mr-2" onclick="toggleMode()">
       <div class="flex flex-col">
         <span class="font-bold text-white" id="nombre">cornutron</span>
@@ -105,40 +105,6 @@
         tweetContainer.classList.replace('opacity-0', 'opacity-100');
       }, 10); // slight delay to allow the transition to work
     });
-
-    function toggleMode() {
-      // Switch modo between 0, 1, and 2 with each function call
-      modo = (modo + 1) % 3;
-      console.log(modo);
-      // Bifurcacion de modos
-      const modos = [
-        {
-          nombre: "cornutron",
-          usuario: "@cornutron3000",
-          pfp: "/img/pfp/pfp_1.jpg",
-          tema: 'Dark',
-          boton: "Cornudear"
-        },
-        {
-          nombre: "futboltron",
-          usuario: "@futboltron2011",
-          pfp: "/img/pfp/pfp_1.jpg",
-          tema: 'Dim',
-          boton: "Cuckear"
-        },
-        {
-          nombre: "hombretrolatron",
-          usuario: "@hombretrolatron1989",
-          pfp: "/img/pfp/pfp_1.jpg",
-          tema: 'Light',
-          boton: "Llorar Concha"
-        }
-      ];
-      const modoActual = modos[modo];
-      document.getElementById("nombre").innerText = modoActual.nombre;
-      document.getElementById("usuario").innerText = modoActual.usuario;
-      document.getElementById("generar").innerText = modoActual.boton;
-    }
   </script>
 </body>
 
