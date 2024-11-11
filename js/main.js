@@ -27,11 +27,6 @@ function toggleMode() {
 	// Switch modo between 0, 1, and 2 with each function call
 	modo = (modo + 1) % modos.length;
 	console.log(modo);
-	document.getElementById('tweet_container').classList.add('opacity-0');
-	setTimeout(() => {
-	   isDarkMode = !isDarkMode; // Cambiar entre modos
-	   document.getElementById('tweet_container').classList.replace('opacity-0', 'opacity-100');
-	}, 500); // Ajusta el tiempo para que coincida con `duration-500`
 	// Se cambian los textos default
 	document.getElementById("nombre").innerText = modos[modo].nombre;
 	document.getElementById("usuario").innerText = modos[modo].usuario;
