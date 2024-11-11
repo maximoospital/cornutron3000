@@ -17,16 +17,8 @@ const modos = [
 	  prefix: "futbol",
 	  default_texto: "tene tu propio tweet de futbolero ya mismo! apreta en \"Cuckear\", tuitea, genera likes.",
 	  tweets: futbolTweets,
-	  tema: 'Dim',
-	  boton: "Cuckear"
-	},
-	{
-	  nombre: "hombretrolatron",
-	  usuario: "@hombretrolatron1989",
-	  prefix: "htrola",
-	  default_texto: "tene tu propio tweet de cornuda ya mismo! apreta en \"Llorar Concha\", tuitea, genera likes.",
 	  tema: 'Light',
-	  boton: "Llorar Concha"
+	  boton: "Cuckear"
 	}
 ];
 
@@ -93,6 +85,7 @@ function generate() {
 			tuit_url = urlnew;
 		}
 	}
+
 	// Foto de perfil aleatoria
 	const randomNum = Math.floor(Math.random() * 10) + 1;
 
