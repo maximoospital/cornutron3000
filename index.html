@@ -46,12 +46,12 @@
   </style>
 </head>
 
-<body class="bg-black text-white font-sans flex items-center justify-center h-screen">
+<body class="{ 'bg-black text-white': isDarkMode, 'bg-white text-black': !isDarkMode } font-sans flex items-center justify-center h-screen transition-colors duration-500">
   <div class="max-w-md p-4 bg-black hidden opacity-0 fade-in" id="tweet_container">
     <!-- Header with Profile Picture and Username -->
     <div class="flex items-center mb-2">
       <img id="profile-picture" src="/cornutron3000//img/cornuda/pfp/pfp_1.jpg" alt="Profile Picture"
-        class="rounded-full h-10 w-10 mr-2" onclick="toggleMode()">
+        class="rounded-full h-10 w-10 mr-2 transition-transform duration-500 transform hover:scale-110" onclick="toggleMode()">
       <div class="flex flex-col">
         <span class="font-bold text-white" id="nombre">cornutron</span>
         <span class="text-gray-500" id="usuario">@cornutron3000</span>
