@@ -40,6 +40,8 @@ function toggleMode() {
 	document.getElementById("imagen").classList.add('hidden');
 	document.getElementById("profile-picture").setAttribute('src', '/cornutron3000/img/' + modos[modo].prefix + "/pfp/pfp_1.jpg");
 	// Cambio de estilo
+	document.body.classList.toggle('bg-white');
+	document.body.classList.toggle('bg-black');
 	document.getElementById("tweet_container").classList.toggle('bg-white');
 	document.getElementById("tweet_container").classList.toggle('bg-black');
 	document.getElementById("nombre").classList.toggle('text-black');
