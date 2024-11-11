@@ -69,11 +69,12 @@ function generate() {
 	}).format(d);
 	document.getElementById("hora").innerText = time;
 	document.getElementById("fecha").innerText = formattedDate;
-	document.getElementById("tuit_texto").innerText = tuit_select;
 
 	// Elije una frase
 	const indice = Math.floor(Math.random() * modos[modo].tweets.length);
 	tuit_select = modos[modo].tweets[indice];
+	
+	document.getElementById("tuit_texto").innerText = tuit_select;
 
 	// Elije una foto
 	if (modo == 0) {
@@ -81,7 +82,7 @@ function generate() {
 			const indice_foto = Math.floor(Math.random() * (28 - 1) + 1);
 			var urlnew = tuit_url + `tw/${indice_foto}.html`;
 
-			document.getElementById("imagen").setAttribute('src', "/cornutron3000/" + modos[modo].prefix + "/img/imagen_" + indice_foto + ".jpeg");
+			document.getElementById("imagen").setAttribute('src', "/cornutron3000/" + "/img/" + + modos[modo].prefix + "/imagen_" + indice_foto + ".jpeg");
 			document.getElementById("imagen").classList.remove('hidden');
 			document.getElementById("imagen").onload = () => {
 				setTimeout(() => {
