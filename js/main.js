@@ -32,7 +32,7 @@ const modos = [
 
 function toggleMode() {
 	// Switch modo between 0, 1, and 2 with each function call
-	modo = (modo + 1) % 3;
+	modo = (modo + 1) % modos.length;
 	console.log(modo);
 	// Bifurcacion de modos
 	document.getElementById("nombre").innerText = modos[modo].nombre;
@@ -73,7 +73,7 @@ function generate() {
 	// Elije una frase
 	const indice = Math.floor(Math.random() * modos[modo].tweets.length);
 	tuit_select = modos[modo].tweets[indice];
-	
+
 	document.getElementById("tuit_texto").innerText = tuit_select;
 
 	// Elije una foto
@@ -82,7 +82,7 @@ function generate() {
 			const indice_foto = Math.floor(Math.random() * (28 - 1) + 1);
 			var urlnew = tuit_url + `tw/${indice_foto}.html`;
 
-			document.getElementById("imagen").setAttribute('src', "/cornutron3000/" + "/img/" + + modos[modo].prefix + "/imagen_" + indice_foto + ".jpeg");
+			document.getElementById("imagen").setAttribute('src', "/cornutron3000/" + "/img/" + modos[modo].prefix + "/imagen_" + indice_foto + ".jpeg");
 			document.getElementById("imagen").classList.remove('hidden');
 			document.getElementById("imagen").onload = () => {
 				setTimeout(() => {
