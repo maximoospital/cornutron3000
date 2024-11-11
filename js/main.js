@@ -36,6 +36,18 @@ function toggleMode() {
 	// Cambio de estilo
 	document.getElementById("tweet_container").classList.toggle('bg-white');
 	document.getElementById("tweet_container").classList.toggle('bg-black');
+	document.getElementById("nombre").classList.toggle('text-black');
+	document.getElementById("nombre").classList.toggle('text-white');
+	document.getElementById("tuit_texto").classList.toggle('text-black');
+	document.getElementById("tuit_texto").classList.toggle('text-white');
+	document.getElementById("views").classList.toggle('text-black');
+	document.getElementById("views").classList.toggle('text-white');
+	document.getElementById("likes").classList.toggle('text-black');
+	document.getElementById("likes").classList.toggle('text-white');
+	document.getElementById("nombre").classList.toggle('text-black');
+	document.getElementById("nombre").classList.toggle('text-white');
+	document.getElementById("nombre2").classList.toggle('text-black');
+	document.getElementById("nombre2").classList.toggle('text-white');	
   }
 
 function generate() {
