@@ -42,8 +42,6 @@ function toggleMode() {
 	// Cambio de estilo
 	document.body.classList.toggle('bg-white');
 	document.body.classList.toggle('bg-black');
-	document.getElementById("tweet_container").classList.toggle('bg-white');
-	document.getElementById("tweet_container").classList.toggle('bg-black');
 	document.getElementById("nombre").classList.toggle('text-black');
 	document.getElementById("nombre").classList.toggle('text-white');
 	document.getElementById("tuit_texto").classList.toggle('text-black');
