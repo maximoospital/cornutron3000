@@ -1,6 +1,7 @@
 let tuit_select = "";
 let tuit_url = "https://maximoospital.xyz/cornutron3000/";
 let modo = 0;
+let isDarkMode = true;
 const modos = [
 	{
 	  nombre: "cornutron",
@@ -26,6 +27,11 @@ function toggleMode() {
 	// Switch modo between 0, 1, and 2 with each function call
 	modo = (modo + 1) % modos.length;
 	console.log(modo);
+	document.getElementById('tweet_container').classList.add('opacity-0');
+	setTimeout(() => {
+	   isDarkMode = !isDarkMode; // Cambiar entre modos
+	   document.getElementById('tweet_container').classList.replace('opacity-0', 'opacity-100');
+	}, 500); // Ajusta el tiempo para que coincida con `duration-500`
 	// Se cambian los textos default
 	document.getElementById("nombre").innerText = modos[modo].nombre;
 	document.getElementById("usuario").innerText = modos[modo].usuario;
@@ -34,8 +40,6 @@ function toggleMode() {
 	document.getElementById("imagen").classList.add('hidden');
 	document.getElementById("profile-picture").setAttribute('src', '/cornutron3000/img/' + modos[modo].prefix + "/pfp/pfp_1.jpg");
 	// Cambio de estilo
-	document.body.classList.toggle('bg-white');
-	document.body.classList.toggle('bg-black');
 	document.getElementById("tweet_container").classList.toggle('bg-white');
 	document.getElementById("tweet_container").classList.toggle('bg-black');
 	document.getElementById("nombre").classList.toggle('text-black');
