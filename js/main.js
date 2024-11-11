@@ -26,13 +26,16 @@ function toggleMode() {
 	// Switch modo between 0, 1, and 2 with each function call
 	modo = (modo + 1) % modos.length;
 	console.log(modo);
-	// Bifurcacion de modos
+	// Se cambian los textos default
 	document.getElementById("nombre").innerText = modos[modo].nombre;
 	document.getElementById("usuario").innerText = modos[modo].usuario;
 	document.getElementById("generar").innerText = modos[modo].boton;
 	document.getElementById("tuit_texto").innerText = modos[modo].default_texto;
 	document.getElementById("imagen").classList.add('hidden');
 	document.getElementById("profile-picture").setAttribute('src', '/cornutron3000/img/' + modos[modo].prefix + "/pfp/pfp_1.jpg");
+	// Cambio de estilo
+	document.getElementById("tweet_container").classList.toggle('bg-white');
+	document.getElementById("tweet_container").classList.toggle('bg-black');
   }
 
 function generate() {
