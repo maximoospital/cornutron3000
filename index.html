@@ -46,7 +46,7 @@
   </style>
 </head>
 
-<body class="{ 'bg-black text-white': isDarkMode, 'bg-white text-black': !isDarkMode } font-sans flex items-center justify-center h-screen transition-colors duration-500">
+<body :class="{ 'bg-black text-white': isDarkMode, 'bg-white text-black': !isDarkMode }" class="font-sans flex items-center justify-center h-screen transition-colors duration-500">
   <div class="max-w-md p-4 bg-black hidden opacity-0 fade-in" id="tweet_container">
     <!-- Header with Profile Picture and Username -->
     <div class="flex items-center mb-2">
