@@ -34,6 +34,8 @@ function toggleMode() {
 	document.getElementById("imagen").classList.add('hidden');
 	document.getElementById("profile-picture").setAttribute('src', '/cornutron3000/img/' + modos[modo].prefix + "/pfp/pfp_1.jpg");
 	// Cambio de estilo
+	document.body.classList.toggle('bg-white');
+	document.body.classList.toggle('bg-black');
 	document.getElementById("tweet_container").classList.toggle('bg-white');
 	document.getElementById("tweet_container").classList.toggle('bg-black');
 	document.getElementById("nombre").classList.toggle('text-black');
@@ -44,10 +46,10 @@ function toggleMode() {
 	document.getElementById("views").classList.toggle('text-white');
 	document.getElementById("likes").classList.toggle('text-black');
 	document.getElementById("likes").classList.toggle('text-white');
-	document.getElementById("nombre").classList.toggle('text-black');
-	document.getElementById("nombre").classList.toggle('text-white');
-	document.getElementById("nombre2").classList.toggle('text-black');
-	document.getElementById("nombre2").classList.toggle('text-white');	
+	document.getElementById("nombrecred").classList.toggle('text-black');
+	document.getElementById("nombrecred").classList.toggle('text-white');
+	document.getElementById("nombrecred2").classList.toggle('text-black');
+	document.getElementById("nombrecred2").classList.toggle('text-white');	
   }
 
 function generate() {
