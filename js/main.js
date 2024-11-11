@@ -72,7 +72,7 @@ function generate() {
 	document.getElementById("tuit_texto").innerText = tuit_select;
 
 	// Elije una frase
-	const indice = Math.floor(Math.random() * cornudaTuits.length);
+	const indice = Math.floor(Math.random() * modos[modo].tweets.length);
 	tuit_select = modos[modo].tweets[indice];
 
 	// Elije una foto
