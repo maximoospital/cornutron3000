@@ -1,40 +1,40 @@
 let tuit_select = "";
 let tuit_url = "https://maximoospital.xyz/cornutron3000/";
 let modo = 0;
+const modos = [
+	{
+	  nombre: "cornutron",
+	  usuario: "@cornutron3000",
+	  prefix: "cornuda",
+	  default_texto: "tene tu propio tweet de cornuda ya mismo! apreta en \"Cornudear\", tuitea, genera likes.",
+	  tweets: cornudaTuits,
+	  tema: 'Dark',
+	  boton: "Cornudear"
+	},
+	{
+	  nombre: "futboltron",
+	  usuario: "@futboltron2011",
+	  prefix: "futbol",
+	  default_texto: "tene tu propio tweet de futbolero ya mismo! apreta en \"Cuckear\", tuitea, genera likes.",
+	  tweets: futbolTweets,
+	  tema: 'Dim',
+	  boton: "Cuckear"
+	},
+	{
+	  nombre: "hombretrolatron",
+	  usuario: "@hombretrolatron1989",
+	  prefix: "htrola",
+	  default_texto: "tene tu propio tweet de cornuda ya mismo! apreta en \"Llorar Concha\", tuitea, genera likes.",
+	  tema: 'Light',
+	  boton: "Llorar Concha"
+	}
+];
 
 function toggleMode() {
 	// Switch modo between 0, 1, and 2 with each function call
 	modo = (modo + 1) % 3;
 	console.log(modo);
 	// Bifurcacion de modos
-	const modos = [
-	  {
-		nombre: "cornutron",
-		usuario: "@cornutron3000",
-		prefix: "cornuda",
-		default_texto: "tene tu propio tweet de cornuda ya mismo! apreta en \"Cornudear\", tuitea, genera likes.",
-		tweets: cornudaTuits,
-		tema: 'Dark',
-		boton: "Cornudear"
-	  },
-	  {
-		nombre: "futboltron",
-		usuario: "@futboltron2011",
-		prefix: "futbol",
-		default_texto: "tene tu propio tweet de futbolero ya mismo! apreta en \"Cuckear\", tuitea, genera likes.",
-		tweets: futbolTweets,
-		tema: 'Dim',
-		boton: "Cuckear"
-	  },
-	  {
-		nombre: "hombretrolatron",
-		usuario: "@hombretrolatron1989",
-		prefix: "htrola",
-		default_texto: "tene tu propio tweet de cornuda ya mismo! apreta en \"Llorar Concha\", tuitea, genera likes.",
-		tema: 'Light',
-		boton: "Llorar Concha"
-	  }
-	];
 	document.getElementById("nombre").innerText = modos[modo].nombre;
 	document.getElementById("usuario").innerText = modos[modo].usuario;
 	document.getElementById("generar").innerText = modos[modo].boton;
