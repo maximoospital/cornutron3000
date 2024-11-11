@@ -11,7 +11,7 @@ function toggleMode() {
 	  {
 		nombre: "cornutron",
 		usuario: "@cornutron3000",
-		prefix: "/img/cornuda/",
+		prefix: "img/cornuda/",
 		default_texto: "tene tu propio tweet de cornuda ya mismo! apreta en \"Cornudear\", tuitea, genera likes.",
 		tema: 'Dark',
 		boton: "Cornudear"
@@ -19,7 +19,7 @@ function toggleMode() {
 	  {
 		nombre: "futboltron",
 		usuario: "@futboltron2011",
-		prefix: "/img/futbol/",
+		prefix: "img/futbol/",
 		default_texto: "tene tu propio tweet de futbolero ya mismo! apreta en \"Cuckear\", tuitea, genera likes.",
 		tema: 'Dim',
 		boton: "Cuckear"
@@ -27,7 +27,7 @@ function toggleMode() {
 	  {
 		nombre: "hombretrolatron",
 		usuario: "@hombretrolatron1989",
-		prefix: "/img/htrola/",
+		prefix: "img/htrola/",
 		default_texto: "tene tu propio tweet de cornuda ya mismo! apreta en \"Llorar Concha\", tuitea, genera likes.",
 		tema: 'Light',
 		boton: "Llorar Concha"
